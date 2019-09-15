@@ -11,7 +11,8 @@ export class AppComponent implements OnInit {
   projectForm: FormGroup;
   ngOnInit() {
     this.projectForm = new FormGroup({
-      'projectName': new FormControl(null, [Validators.required, CustomValidators.inValidProjectname]),
+      'projectName': new FormControl(null, [Validators.required, CustomValidators.inValidProjectname],
+                                      CustomValidators.asyncInvalidProjectName),
       'email': new FormControl(null, [Validators.required, Validators.email]),
       'projectStatus': new FormControl('critical'),
     });
