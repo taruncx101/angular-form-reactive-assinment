@@ -16,12 +16,13 @@
       </pre>
 
 
-        <form>
+        <form [formGroup]="projectForm" (ngSubmit) = "onSaveProject()">
           <div class="form-group">
             <label for="name">Project Name</label>
             <input
             type="text"
             id="name"
+            formControlName="projectName"
             class="form-control">
           </div>
           <div class="form-group">
@@ -29,12 +30,14 @@
               <input
               type="text"
               id="email"
+              formControlName="email"
               class="form-control">
           </div>
           <div class="form-group">
             <label for="status">Project Status</label>
             <select name="status"
              id="status"
+             formControlName="projectStatus"
              class="form-control">
               <option value="stable">Stable</option>
               <option value="critical">Critical</option>
